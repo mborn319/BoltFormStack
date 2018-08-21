@@ -6,7 +6,7 @@
         "form",
         "formstack"
     ],
-    "version": "0.0.1",
+    "version": "0.0.2",
     "require": {
         "bolt/bolt": "^3.0",
         "jgulledge/formstack-api": "^1.1"
