@@ -1,0 +1,13 @@
+# Formstack API connection parameters...
+
+# FormStack client ID
+api_client_id: '1001'
+
+# FormStack client secret
+api_client_secret: 'XXXX'
+
+# This is your FormStack redirect URL for apps.
+api_redirect_url: 'https://www.example.com'
+
+# This is your FormStack access token
+api_access_token: '1234567890ABCDEFGHIJKLM'
