@@ -1,0 +1,8 @@
+.DS_*
+*.swp
+.vscode
+config.yml
+composer.lock
+vendor/
+tests/tmp/
+

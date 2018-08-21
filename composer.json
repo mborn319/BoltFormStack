@@ -1,0 +1,40 @@
+{
+    "name": "mborn319/formstack",
+    "description": "Embed a Formstack form onto your Bolt-driven website",
+    "type": "bolt-extension",
+    "keywords": [
+        "form",
+        "formstack"
+    ],
+    "version": "0.0.1",
+    "require": {
+        "bolt/bolt": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Born",
+            "email": "mborn319@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Bolt\\Extension\\Mborn319\\Formstack\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bolt\\Extension\\Mborn319\\Formstack\\Tests\\": "tests",
+            "Bolt\\Tests\\": "vendor/bolt/bolt/tests/phpunit/unit/"
+        }
+    },
+    "extra": {
+        "bolt-assets": "web",
+        "bolt-class": "Bolt\\Extension\\Mborn319\\Formstack\\FormstackExtension"
+    }
+}
