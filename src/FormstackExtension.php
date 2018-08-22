@@ -51,6 +51,6 @@ class FormstackExtension extends SimpleExtension
 
         print( $details['html'] );
 
-        
+        return $details['html'];
     }
 }

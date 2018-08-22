@@ -6,13 +6,15 @@
         "form",
         "formstack"
     ],
-    "version": "0.0.2",
     "require": {
         "bolt/bolt": "^3.0",
-        "jgulledge/formstack-api": "^1.1"
+        "jgulledge/formstack-api": "@stable"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.7"
+    },
+    "provide": {
+        "bolt/bolt": "3.5.0"
     },
     "license": "MIT",
     "authors": [
@@ -21,7 +23,7 @@
             "email": "mborn319@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {

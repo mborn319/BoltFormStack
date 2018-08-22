@@ -12,4 +12,6 @@ This function adds a new `formstackEmbedForm()` Twig function which you can use 
 
 ## Requirements / Thank You!
 
-Requires `jgulledge/formstack-api`.
+Requires [`jgulledge/formstack-api`][1].
+
+[1]: https://github.com/jgulledge19/FormStackAPI
