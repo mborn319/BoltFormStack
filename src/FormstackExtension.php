@@ -2,6 +2,7 @@
 
 namespace Bolt\Extension\Mborn319\Formstack;
 
+use Silex\Application;
 use Bolt\Extension\SimpleExtension;
 use \JGulledge\FormStack\API\FormStack;
 
@@ -12,6 +13,15 @@ use \JGulledge\FormStack\API\FormStack;
  */
 class FormstackExtension extends SimpleExtension
 {
+    /** @var Application */
+    private $app;
+
+    /** @var bool */
+    protected $isDebugLoggedOffTurnedOn;
+
+    /** @var bool */
+    protected $isDebugTurnedOn;
+
     /**
      * {@inheritdoc}
      */
@@ -40,8 +50,7 @@ class FormstackExtension extends SimpleExtension
         $formStack = new FormStack($apiConfig);
 
         // Duh - if debug is on, do debugging!
-        $app = $this->getAll();
-        if ( $app['debug'] ) {
+        if ( $this->isDebugMode() ) {
             $formStack->setDebug();
         }
 
@@ -51,6 +60,24 @@ class FormstackExtension extends SimpleExtension
 
         print( $details['html'] );
 
-        return $details['html'];
+        return new \Twig_Markup($details['html'], 'UTF-8');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function boot(Application $app) {
+        parent::boot($app);
+
+        $this->app = $app;
+
+        $this->isDebugTurnedOn = $app['config']->get('general/debug', false);
+        $this->isDebugLoggedOffTurnedOn = $app['config']->get('general/debug_show_loggedoff', false);
+
+        $this->isUserLoggedIn = $app['session']->isStarted() && $app['session']->has('authentication');
+    }
+
+    protected function isDebugMode() {
+        return $this->isDebugLoggedOffTurnedOn || ( $this->isDebugTurnedOn && $this->isUserLoggedIn ); 
     }
 }
