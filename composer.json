@@ -8,10 +8,16 @@
     ],
     "require": {
         "bolt/bolt": "^3.0",
-        "jgulledge/formstack-api": "@stable"
+        "jgulledge/formstack-api": "^1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.7"
+    },
+    "repositories": {
+        "fstackapi_php-git-repo": {
+            "type":"vcs",
+            "url":"https://github.com/jgulledge19/FormStackAPI"
+        }
     },
     "provide": {
         "bolt/bolt": "3.5.0"
